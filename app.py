@@ -8,7 +8,6 @@ import numpy as np
 app = Flask(__name__)
 
 def get_top_colors(image_data):
-    # ... (Your color counting logic here) ...
     img = Image.open(io.BytesIO(image_data))
     img = img.convert('RGB')
     pixels = np.array(img.getdata())
@@ -28,6 +27,7 @@ def index():
             try:
                 image_data = image_file.read()
                 img = Image.open(io.BytesIO(image_data))
+
                 img_buffer = io.BytesIO()
                 img.save(img_buffer, format='PNG')
                 img_base64 = base64.b64encode(img_buffer.getvalue()).decode('utf-8')
