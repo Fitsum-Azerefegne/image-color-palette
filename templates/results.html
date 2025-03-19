@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Top 10 Colors with RGB</title>
+    <title>Top 10 Colors with HEX</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
@@ -13,10 +13,10 @@
     {% endif %}
     <div class="colors-container">
     {% for color in colors %}
-        <div class="color-display">
-            <div class="color-box" style="background-color: rgb({{ color[0] }}, {{ color[1] }}, {{ color[2] }});"></div>
-            <span>RGB: ({{ color[0] }}, {{ color[1] }}, {{ color[2] }})</span>
-        </div>
+    <div class="color-display">
+        <div class="color-box" style="background-color: {{ color }};"></div>
+        <span> HEX: {{ color }}</span>
+    </div>
     {% endfor %}
 </div>
 

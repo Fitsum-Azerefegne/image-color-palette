@@ -16,7 +16,7 @@ def get_top_colors(image_data):
     hex_colors = []
     for color, count in top_colors:
         hex_color = '#{:02x}{:02x}{:02x}'.format(*color)
-        hex_colors.append({'hex': hex_color, 'count': count})
+        hex_colors.append(hex_color)
     return hex_colors
 
 @app.route('/', methods=['GET', 'POST'])
